@@ -1,0 +1,266 @@
+/* index.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f6fa;
+  color: #2f3640;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #718093;
+}
+
+/* Game controls */
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.mode-selector button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  background-color: #dcdde1;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.mode-selector button.active {
+  background-color: #44bd32;
+  color: white;
+}
+
+.mode-selector button:hover {
+  background-color: #44bd32;
+  color: white;
+}
+
+.restart-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: #e84118;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.restart-btn:hover {
+  background-color: #c23616;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: #f1f2f6;
+  padding: 12px 16px;
+  border-radius: 8px;
+  flex: 1 1 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+  font-weight: 500;
+  color: #718093;
+}
+
+.stat-value {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Game section */
+.main-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.game-section {
+  flex: 1 1 400px;
+}
+
+.status {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.status h3 {
+  font-size: 1.3rem;
+}
+
+.status.game-over h2 {
+  font-size: 1.5rem;
+  color: #e84118;
+}
+
+/* Board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 8px;
+  justify-content: center;
+}
+
+.cell {
+  background-color: #f1f2f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.cell:hover {
+  background-color: #dcdde1;
+}
+
+.cell.disabled {
+  pointer-events: none;
+}
+
+.cell.x {
+  color: #0984e3;
+}
+
+.cell.o {
+  color: #e17055;
+}
+
+/* Analysis panel */
+.analysis-section {
+  flex: 1 1 400px;
+  background-color: #f1f2f6;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panel-header h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #2f3640;
+}
+
+/* Analysis cards */
+.analysis-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.analysis-card {
+  background-color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-left: 4px solid #dcdde1;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.analysis-card.best {
+  border-color: #44bd32;
+  background-color: #eaffea;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.best-tag {
+  background-color: #44bd32;
+  color: white;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.value.text-win {
+  color: #44bd32;
+}
+
+.value.text-loss {
+  color: #e84118;
+}
+
+.value.text-draw {
+  color: #718093;
+}
+
+.verdict {
+  font-size: 0.9rem;
+  color: #2f3640;
+}
+
+.empty-analysis {
+  text-align: center;
+  color: #718093;
+  font-style: italic;
+}
+
+/* Footer (algorithm explanation) */
+footer.explanation {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.algo-info {
+  flex: 1 1 300px;
+  background-color: #f1f2f6;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.separator {
+  width: 2px;
+  background-color: #dcdde1;
+  height: auto;
+  margin: 0 10px;
+}
