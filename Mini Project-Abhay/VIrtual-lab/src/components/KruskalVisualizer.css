@@ -1,0 +1,1384 @@
+/* =========================================
+   BASE & CONTAINER
+========================================= */
+body { 
+  margin: 0; 
+  background-color: #f0f4f8; 
+  overflow-x: hidden; 
+}
+
+.vlab-container { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: #f0f4f8; 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+/* =========================================
+   HEADER STYLES
+========================================= */
+.vlab-header { 
+  background: #fff; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 12px 30px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+  z-index: 10;
+}
+
+.vlab-logo { 
+  color: #007bb6; 
+  font-weight: bold; 
+  font-size: 24px; 
+  letter-spacing: 1px; 
+}
+
+.vlab-title { 
+  color: #2c3e50; 
+  margin: 0; 
+  font-weight: 600; 
+  font-size: 20px; 
+}
+
+.top-btn { 
+  background-color: #3498db; 
+  color: white; 
+  border: none; 
+  padding: 6px 15px; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  font-weight: 500; 
+}
+
+.orange-bar { 
+  height: 5px; 
+  background-color: #e67e22; 
+  width: 100%; 
+}
+
+/* =========================================
+   TOP CONTROLS BAR & BUTTONS
+========================================= */
+.top-controls-bar { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 15px; 
+  background: #fff; 
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.action-buttons-inline { 
+  display: flex; 
+  gap: 15px; 
+}
+
+.btn-action { 
+  background-color: #3498db; 
+  color: white; 
+  border: none; 
+  padding: 10px 25px; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  font-size: 15px; 
+  font-weight: 600; 
+  transition: 0.2s; 
+  box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-action:hover:not(:disabled) { 
+  transform: translateY(-2px); 
+  background-color: #2980b9;
+}
+
+.btn-action:disabled { 
+  background-color: #bdc3c7; 
+  cursor: not-allowed; 
+  box-shadow: none; 
+}
+
+/* Specific Button Colors */
+.btn-reset { 
+  background-color: #7f8c8d; 
+  box-shadow: 0 3px 8px rgba(127, 140, 141, 0.3); 
+}
+
+.btn-reset:hover:not(:disabled) { 
+  background-color: #636e72; 
+}
+
+.btn-random { 
+  background-color: #8e44ad; 
+  box-shadow: 0 3px 8px rgba(142, 68, 173, 0.3); 
+}
+
+.btn-random:hover:not(:disabled) { 
+  background-color: #732d91; 
+}
+
+/* =========================================
+   DASHBOARD LAYOUT (3 FRAMES)
+========================================= */
+.dashboard-layout {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px 30px;
+  flex: 1;
+  height: calc(100vh - 150px); 
+  min-height: 500px;
+}
+
+.dashboard-frame {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.frame-title { 
+  margin: 0; 
+  padding: 15px; 
+  background: #f8f9fa; 
+  border-bottom: 1px solid #e0e6ed; 
+  color: #2c3e50; 
+  font-size: 16px; 
+  text-align: center; 
+  font-weight: 600;
+}
+
+.success-title { 
+  background: #eafaf1; 
+  color: #27ae60; 
+  border-bottom-color: #c3e6cb; 
+}
+
+.success-frame { 
+  border: 2px solid #2ecc71; 
+}
+
+/* Frame Widths */
+.graph-frame { 
+  flex: 1; 
+  min-width: 0; 
+}
+
+.process-frame { 
+  width: 320px; 
+  flex-shrink: 0; 
+}
+
+/* =========================================
+   SVG GRAPH WRAPPERS
+========================================= */
+.svg-wrapper { 
+  flex: 1; 
+  padding: 10px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: #fafbfc; 
+}
+
+.responsive-svg { 
+  width: 100%; 
+  height: 100%; 
+  max-height: 450px; 
+}
+
+/* =========================================
+   PROCESS PANEL DETAILS
+========================================= */
+.status-box { 
+  padding: 15px; 
+  border-bottom: 1px dashed #dcdde1; 
+  min-height: 50px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.obs-status { 
+  margin: 0; 
+  font-size: 15px; 
+  font-weight: 600; 
+  color: #2980b9; 
+  text-align: center; 
+  line-height: 1.4; 
+}
+
+.queue-box { 
+  flex: 1; 
+  padding: 15px; 
+  display: flex; 
+  flex-direction: column; 
+  overflow: hidden; 
+  background: #fdfdfd; 
+}
+
+.queue-box h4 { 
+  margin: 0 0 10px 0; 
+  color: #7f8c8d; 
+  font-size: 14px; 
+  text-transform: uppercase; 
+  font-weight: 700;
+}
+
+.empty-text { 
+  font-size: 13px; 
+  color: #aaa; 
+  font-style: italic; 
+}
+
+.edge-list { 
+  flex: 1; 
+  overflow-y: auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px; 
+  padding-right: 5px; 
+}
+
+.edge-list::-webkit-scrollbar { 
+  width: 5px; 
+}
+
+.edge-list::-webkit-scrollbar-thumb { 
+  background: #bdc3c7; 
+  border-radius: 10px; 
+}
+
+.edge-item {
+  padding: 8px 12px; 
+  border-radius: 6px; 
+  font-size: 14px; 
+  font-weight: 600;
+  background: #f1f2f6; 
+  border: 1px solid #dcdde1; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  transition: 0.2s; 
+  color: #2f3640;
+}
+
+.weight-badge { 
+  background: #fff; 
+  padding: 3px 8px; 
+  border-radius: 4px; 
+  border: 1px solid #dcdde1; 
+  font-size: 12px; 
+  color: #555; 
+}
+
+/* =========================================
+   EDGE STATES (CHECKING, ACCEPTED, REJECTED)
+========================================= */
+.checking { 
+  background-color: #f39c12; 
+  border-color: #e67e22; 
+  color: #fff; 
+  transform: scale(1.02); 
+}
+.checking .weight-badge { color: #f39c12; border: none; }
+
+.accepted { 
+  background-color: #2ecc71; 
+  border-color: #27ae60; 
+  color: #fff; 
+}
+.accepted .weight-badge { color: #27ae60; border: none; }
+
+.rejected { 
+  background-color: #e74c3c; 
+  border-color: #c0392b; 
+  color: #fff; 
+  text-decoration: line-through; 
+  opacity: 0.6; 
+}
+.rejected .weight-badge { color: #e74c3c; border: none; text-decoration: line-through; }
+
+/* =========================================
+   WEIGHT COUNTER (BOTTOM OF PANEL)
+========================================= */
+.weight-counter { 
+  padding: 15px; 
+  background: #eafaf1; 
+  text-align: center; 
+  border-top: 1px solid #2ecc71; 
+}
+
+.weight-counter strong { 
+  color: #27ae60; 
+  font-size: 14px; 
+}
+
+.big-weight { 
+  font-size: 28px; 
+  font-weight: bold; 
+  color: #2ecc71; 
+  display: block; 
+  margin-top: 5px; 
+}
+
+/* =========================================
+   FORMULA BUTTON & POPUP MODAL STYLES
+========================================= */
+.btn-formula {
+  margin-top: 12px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  width: 100%;
+  transition: 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-formula:hover { 
+  background-color: #1a252f; 
+  transform: translateY(-1px);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; 
+  right: 15px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px; 
+  height: 32px;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.close-btn:hover { 
+  background: #c0392b; 
+  transform: scale(1.1);
+}
+
+.modal-title { 
+  margin-top: 0; 
+  color: #2980b9; 
+  border-bottom: 2px solid #ecf0f1; 
+  padding-bottom: 12px; 
+  font-size: 22px;
+}
+
+.math-steps p { 
+  font-size: 15px; 
+  color: #34495e; 
+  margin: 10px 0; 
+  line-height: 1.5;
+}
+
+.math-steps ul { 
+  font-size: 14.5px; 
+  color: #555; 
+  background: #f1f2f6;
+  padding: 15px 15px 15px 35px;
+  border-radius: 6px;
+}
+
+.math-steps li {
+  margin-bottom: 5px;
+}
+
+.calculation-box {
+  background: #f8f9fa;
+  padding: 18px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 5px solid #27ae60;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.calculation-box h4 { 
+  margin: 0 0 12px 0; 
+  color: #27ae60; 
+  font-size: 17px;
+}
+
+.calculation-box p {
+  margin: 8px 0;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+.final-sum {
+  font-size: 18px !important;
+  color: #27ae60 !important;
+  margin-top: 12px !important;
+  padding-top: 12px;
+  border-top: 1px dashed #bdc3c7;
+}/* =========================================
+   BASE & CONTAINER
+========================================= */
+body { 
+  margin: 0; 
+  background-color: #f0f4f8; 
+  overflow-x: hidden; 
+}
+
+.vlab-container { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: #f0f4f8; 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+/* =========================================
+   HEADER STYLES
+========================================= */
+.vlab-header { 
+  background: #fff; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 12px 30px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+  z-index: 10;
+}
+
+.vlab-logo { 
+  color: #007bb6; 
+  font-weight: bold; 
+  font-size: 24px; 
+  letter-spacing: 1px; 
+}
+
+.vlab-title { 
+  color: #2c3e50; 
+  margin: 0; 
+  font-weight: 600; 
+  font-size: 20px; 
+}
+
+.top-btn { 
+  background-color: #3498db; 
+  color: white; 
+  border: none; 
+  padding: 6px 15px; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  font-weight: 500; 
+}
+
+.orange-bar { 
+  height: 5px; 
+  background-color: #e67e22; 
+  width: 100%; 
+}
+
+/* =========================================
+   TOP CONTROLS BAR & BUTTONS
+========================================= */
+.top-controls-bar { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 15px; 
+  background: #fff; 
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.action-buttons-inline { 
+  display: flex; 
+  gap: 15px; 
+}
+
+.btn-action { 
+  background-color: #3498db; 
+  color: white; 
+  border: none; 
+  padding: 10px 25px; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  font-size: 15px; 
+  font-weight: 600; 
+  transition: 0.2s; 
+  box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-action:hover:not(:disabled) { 
+  transform: translateY(-2px); 
+  background-color: #2980b9;
+}
+
+.btn-action:disabled { 
+  background-color: #bdc3c7; 
+  cursor: not-allowed; 
+  box-shadow: none; 
+}
+
+/* Specific Button Colors */
+.btn-reset { 
+  background-color: #7f8c8d; 
+  box-shadow: 0 3px 8px rgba(127, 140, 141, 0.3); 
+}
+
+.btn-reset:hover:not(:disabled) { 
+  background-color: #636e72; 
+}
+
+.btn-random { 
+  background-color: #8e44ad; 
+  box-shadow: 0 3px 8px rgba(142, 68, 173, 0.3); 
+}
+
+.btn-random:hover:not(:disabled) { 
+  background-color: #732d91; 
+}
+
+/* =========================================
+   DASHBOARD LAYOUT (3 FRAMES)
+========================================= */
+.dashboard-layout {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px 30px;
+  flex: 1;
+  height: calc(100vh - 150px); 
+  min-height: 500px;
+}
+
+.dashboard-frame {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.frame-title { 
+  margin: 0; 
+  padding: 15px; 
+  background: #f8f9fa; 
+  border-bottom: 1px solid #e0e6ed; 
+  color: #2c3e50; 
+  font-size: 16px; 
+  text-align: center; 
+  font-weight: 600;
+}
+
+.success-title { 
+  background: #eafaf1; 
+  color: #27ae60; 
+  border-bottom-color: #c3e6cb; 
+}
+
+.success-frame { 
+  border: 2px solid #2ecc71; 
+}
+
+/* Frame Widths */
+.graph-frame { 
+  flex: 1; 
+  min-width: 0; 
+}
+
+.process-frame { 
+  width: 320px; 
+  flex-shrink: 0; 
+}
+
+/* =========================================
+   SVG GRAPH WRAPPERS
+========================================= */
+.svg-wrapper { 
+  flex: 1; 
+  padding: 10px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: #fafbfc; 
+}
+
+.responsive-svg { 
+  width: 100%; 
+  height: 100%; 
+  max-height: 450px; 
+}
+
+/* =========================================
+   PROCESS PANEL DETAILS
+========================================= */
+.status-box { 
+  padding: 15px; 
+  border-bottom: 1px dashed #dcdde1; 
+  min-height: 50px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.obs-status { 
+  margin: 0; 
+  font-size: 15px; 
+  font-weight: 600; 
+  color: #2980b9; 
+  text-align: center; 
+  line-height: 1.4; 
+}
+
+.queue-box { 
+  flex: 1; 
+  padding: 15px; 
+  display: flex; 
+  flex-direction: column; 
+  overflow: hidden; 
+  background: #fdfdfd; 
+}
+
+.queue-box h4 { 
+  margin: 0 0 10px 0; 
+  color: #7f8c8d; 
+  font-size: 14px; 
+  text-transform: uppercase; 
+  font-weight: 700;
+}
+
+.empty-text { 
+  font-size: 13px; 
+  color: #aaa; 
+  font-style: italic; 
+}
+
+.edge-list { 
+  flex: 1; 
+  overflow-y: auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px; 
+  padding-right: 5px; 
+}
+
+.edge-list::-webkit-scrollbar { 
+  width: 5px; 
+}
+
+.edge-list::-webkit-scrollbar-thumb { 
+  background: #bdc3c7; 
+  border-radius: 10px; 
+}
+
+.edge-item {
+  padding: 8px 12px; 
+  border-radius: 6px; 
+  font-size: 14px; 
+  font-weight: 600;
+  background: #f1f2f6; 
+  border: 1px solid #dcdde1; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  transition: 0.2s; 
+  color: #2f3640;
+}
+
+.weight-badge { 
+  background: #fff; 
+  padding: 3px 8px; 
+  border-radius: 4px; 
+  border: 1px solid #dcdde1; 
+  font-size: 12px; 
+  color: #555; 
+}
+
+/* =========================================
+   EDGE STATES (CHECKING, ACCEPTED, REJECTED)
+========================================= */
+.checking { 
+  background-color: #f39c12; 
+  border-color: #e67e22; 
+  color: #fff; 
+  transform: scale(1.02); 
+}
+.checking .weight-badge { color: #f39c12; border: none; }
+
+.accepted { 
+  background-color: #2ecc71; 
+  border-color: #27ae60; 
+  color: #fff; 
+}
+.accepted .weight-badge { color: #27ae60; border: none; }
+
+.rejected { 
+  background-color: #e74c3c; 
+  border-color: #c0392b; 
+  color: #fff; 
+  text-decoration: line-through; 
+  opacity: 0.6; 
+}
+.rejected .weight-badge { color: #e74c3c; border: none; text-decoration: line-through; }
+
+/* =========================================
+   WEIGHT COUNTER (BOTTOM OF PANEL)
+========================================= */
+.weight-counter { 
+  padding: 15px; 
+  background: #eafaf1; 
+  text-align: center; 
+  border-top: 1px solid #2ecc71; 
+}
+
+.weight-counter strong { 
+  color: #27ae60; 
+  font-size: 14px; 
+}
+
+.big-weight { 
+  font-size: 28px; 
+  font-weight: bold; 
+  color: #2ecc71; 
+  display: block; 
+  margin-top: 5px; 
+}
+
+/* =========================================
+   FORMULA BUTTON & POPUP MODAL STYLES
+========================================= */
+.btn-formula {
+  margin-top: 12px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  width: 100%;
+  transition: 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-formula:hover { 
+  background-color: #1a252f; 
+  transform: translateY(-1px);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; 
+  right: 15px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px; 
+  height: 32px;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.close-btn:hover { 
+  background: #c0392b; 
+  transform: scale(1.1);
+}
+
+.modal-title { 
+  margin-top: 0; 
+  color: #2980b9; 
+  border-bottom: 2px solid #ecf0f1; 
+  padding-bottom: 12px; 
+  font-size: 22px;
+}
+
+.math-steps p { 
+  font-size: 15px; 
+  color: #34495e; 
+  margin: 10px 0; 
+  line-height: 1.5;
+}
+
+.math-steps ul { 
+  font-size: 14.5px; 
+  color: #555; 
+  background: #f1f2f6;
+  padding: 15px 15px 15px 35px;
+  border-radius: 6px;
+}
+
+.math-steps li {
+  margin-bottom: 5px;
+}
+
+.calculation-box {
+  background: #f8f9fa;
+  padding: 18px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 5px solid #27ae60;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.calculation-box h4 { 
+  margin: 0 0 12px 0; 
+  color: #27ae60; 
+  font-size: 17px;
+}
+
+.calculation-box p {
+  margin: 8px 0;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+.final-sum {
+  font-size: 18px !important;
+  color: #27ae60 !important;
+  margin-top: 12px !important;
+  padding-top: 12px;
+  border-top: 1px dashed #bdc3c7;
+}/* =========================================
+   BASE & CONTAINER
+========================================= */
+body { 
+  margin: 0; 
+  background-color: #f0f4f8; 
+  overflow-x: hidden; 
+}
+
+.vlab-container { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: #f0f4f8; 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+/* =========================================
+   HEADER STYLES
+========================================= */
+.vlab-header { 
+  background: #fff; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 12px 30px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+  z-index: 10;
+}
+
+.vlab-logo { 
+  color: #007bb6; 
+  font-weight: bold; 
+  font-size: 24px; 
+  letter-spacing: 1px; 
+}
+
+.vlab-title { 
+  color: #2c3e50; 
+  margin: 0; 
+  font-weight: 600; 
+  font-size: 20px; 
+}
+
+.top-btn { 
+  background-color: #3498db; 
+  color: white; 
+  border: none; 
+  padding: 6px 15px; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  font-weight: 500; 
+}
+
+.orange-bar { 
+  height: 5px; 
+  background-color: #e67e22; 
+  width: 100%; 
+}
+
+/* =========================================
+   TOP CONTROLS BAR & BUTTONS
+========================================= */
+.top-controls-bar { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 15px; 
+  background: #fff; 
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.action-buttons-inline { 
+  display: flex; 
+  gap: 15px; 
+}
+
+.btn-action { 
+  background-color: #3498db; 
+  color: white; 
+  border: none; 
+  padding: 10px 25px; 
+  border-radius: 20px; 
+  cursor: pointer; 
+  font-size: 15px; 
+  font-weight: 600; 
+  transition: 0.2s; 
+  box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-action:hover:not(:disabled) { 
+  transform: translateY(-2px); 
+  background-color: #2980b9;
+}
+
+.btn-action:disabled { 
+  background-color: #bdc3c7; 
+  cursor: not-allowed; 
+  box-shadow: none; 
+}
+
+/* Specific Button Colors */
+.btn-reset { 
+  background-color: #7f8c8d; 
+  box-shadow: 0 3px 8px rgba(127, 140, 141, 0.3); 
+}
+
+.btn-reset:hover:not(:disabled) { 
+  background-color: #636e72; 
+}
+
+.btn-random { 
+  background-color: #8e44ad; 
+  box-shadow: 0 3px 8px rgba(142, 68, 173, 0.3); 
+}
+
+.btn-random:hover:not(:disabled) { 
+  background-color: #732d91; 
+}
+
+/* =========================================
+   DASHBOARD LAYOUT (3 FRAMES)
+========================================= */
+.dashboard-layout {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px 30px;
+  flex: 1;
+  height: calc(100vh - 150px); 
+  min-height: 500px;
+}
+
+.dashboard-frame {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.frame-title { 
+  margin: 0; 
+  padding: 15px; 
+  background: #f8f9fa; 
+  border-bottom: 1px solid #e0e6ed; 
+  color: #2c3e50; 
+  font-size: 16px; 
+  text-align: center; 
+  font-weight: 600;
+}
+
+.success-title { 
+  background: #eafaf1; 
+  color: #27ae60; 
+  border-bottom-color: #c3e6cb; 
+}
+
+.success-frame { 
+  border: 2px solid #2ecc71; 
+}
+
+/* Frame Widths */
+.graph-frame { 
+  flex: 1; 
+  min-width: 0; 
+}
+
+.process-frame { 
+  width: 320px; 
+  flex-shrink: 0; 
+}
+
+/* =========================================
+   SVG GRAPH WRAPPERS
+========================================= */
+.svg-wrapper { 
+  flex: 1; 
+  padding: 10px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: #fafbfc; 
+}
+
+.responsive-svg { 
+  width: 100%; 
+  height: 100%; 
+  max-height: 450px; 
+}
+
+/* =========================================
+   PROCESS PANEL DETAILS
+========================================= */
+.status-box { 
+  padding: 15px; 
+  border-bottom: 1px dashed #dcdde1; 
+  min-height: 50px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.obs-status { 
+  margin: 0; 
+  font-size: 15px; 
+  font-weight: 600; 
+  color: #2980b9; 
+  text-align: center; 
+  line-height: 1.4; 
+}
+
+.queue-box { 
+  flex: 1; 
+  padding: 15px; 
+  display: flex; 
+  flex-direction: column; 
+  overflow: hidden; 
+  background: #fdfdfd; 
+}
+
+.queue-box h4 { 
+  margin: 0 0 10px 0; 
+  color: #7f8c8d; 
+  font-size: 14px; 
+  text-transform: uppercase; 
+  font-weight: 700;
+}
+
+.empty-text { 
+  font-size: 13px; 
+  color: #aaa; 
+  font-style: italic; 
+}
+
+.edge-list { 
+  flex: 1; 
+  overflow-y: auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px; 
+  padding-right: 5px; 
+}
+
+.edge-list::-webkit-scrollbar { 
+  width: 5px; 
+}
+
+.edge-list::-webkit-scrollbar-thumb { 
+  background: #bdc3c7; 
+  border-radius: 10px; 
+}
+
+.edge-item {
+  padding: 8px 12px; 
+  border-radius: 6px; 
+  font-size: 14px; 
+  font-weight: 600;
+  background: #f1f2f6; 
+  border: 1px solid #dcdde1; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  transition: 0.2s; 
+  color: #2f3640;
+}
+
+.weight-badge { 
+  background: #fff; 
+  padding: 3px 8px; 
+  border-radius: 4px; 
+  border: 1px solid #dcdde1; 
+  font-size: 12px; 
+  color: #555; 
+}
+
+/* =========================================
+   EDGE STATES (CHECKING, ACCEPTED, REJECTED)
+========================================= */
+.checking { 
+  background-color: #f39c12; 
+  border-color: #e67e22; 
+  color: #fff; 
+  transform: scale(1.02); 
+}
+.checking .weight-badge { color: #f39c12; border: none; }
+
+.accepted { 
+  background-color: #2ecc71; 
+  border-color: #27ae60; 
+  color: #fff; 
+}
+.accepted .weight-badge { color: #27ae60; border: none; }
+
+.rejected { 
+  background-color: #e74c3c; 
+  border-color: #c0392b; 
+  color: #fff; 
+  text-decoration: line-through; 
+  opacity: 0.6; 
+}
+.rejected .weight-badge { color: #e74c3c; border: none; text-decoration: line-through; }
+
+/* =========================================
+   WEIGHT COUNTER (BOTTOM OF PANEL)
+========================================= */
+.weight-counter { 
+  padding: 15px; 
+  background: #eafaf1; 
+  text-align: center; 
+  border-top: 1px solid #2ecc71; 
+}
+
+.weight-counter strong { 
+  color: #27ae60; 
+  font-size: 14px; 
+}
+
+.big-weight { 
+  font-size: 28px; 
+  font-weight: bold; 
+  color: #2ecc71; 
+  display: block; 
+  margin-top: 5px; 
+}
+
+/* =========================================
+   FORMULA BUTTON & POPUP MODAL STYLES
+========================================= */
+.btn-formula {
+  margin-top: 12px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  width: 100%;
+  transition: 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-formula:hover { 
+  background-color: #1a252f; 
+  transform: translateY(-1px);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; 
+  right: 15px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px; 
+  height: 32px;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.close-btn:hover { 
+  background: #c0392b; 
+  transform: scale(1.1);
+}
+
+.modal-title { 
+  margin-top: 0; 
+  color: #2980b9; 
+  border-bottom: 2px solid #ecf0f1; 
+  padding-bottom: 12px; 
+  font-size: 22px;
+}
+
+.math-steps p { 
+  font-size: 15px; 
+  color: #34495e; 
+  margin: 10px 0; 
+  line-height: 1.5;
+}
+
+.math-steps ul { 
+  font-size: 14.5px; 
+  color: #555; 
+  background: #f1f2f6;
+  padding: 15px 15px 15px 35px;
+  border-radius: 6px;
+}
+
+.math-steps li {
+  margin-bottom: 5px;
+}
+
+.calculation-box {
+  background: #f8f9fa;
+  padding: 18px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 5px solid #27ae60;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.calculation-box h4 { 
+  margin: 0 0 12px 0; 
+  color: #27ae60; 
+  font-size: 17px;
+}
+
+.calculation-box p {
+  margin: 8px 0;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+.final-sum {
+  font-size: 18px !important;
+  color: #27ae60 !important;
+  margin-top: 12px !important;
+  padding-top: 12px;
+  border-top: 1px dashed #bdc3c7;
+}
